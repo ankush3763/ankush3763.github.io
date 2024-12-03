@@ -1,0 +1,321 @@
+:root {
+    --color1: 109, 163, 77;
+    --color2: 86, 68, 93;
+    --color3: 84, 134, 135;
+    --color4: 143, 188, 148;
+    --color5: 197, 233, 155;
+
+    --header: var(--color2);
+    --onHeader: var(--color5);
+    --onHeaderPassive: var(--color4);
+    --body: var(--header);
+
+    --onBody: 255, 255, 255;
+    --onBodyPassive: 226, 226, 226;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    background-color: rgb(var(--body));
+}
+
+.clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.clickable:hover {
+    transform: scale(1.08);
+}
+
+.clickable:active {
+    transform: scale(1.04);
+}
+
+.smallIcon {
+    fill: rgb(var(--onHeader));
+    height: 1.4rem;
+    margin: 0 1rem;
+}
+
+.mediumIcon {
+    width: 4rem;
+    background-color: rgba(var(--onHeader), 0.2);
+    border-radius: 1rem;
+    border: 0.2rem solid rgb(var(--onHeader));
+    padding: 0.6rem;
+    margin: 0.4rem;
+}
+
+.mediumIcon:hover {
+    background-color: rgba(var(--onHeader), 0.4);
+}
+
+.mediumIcon:active {
+    background-color: rgba(var(--onHeader), 0.6);
+}
+
+.whiteIcon {
+    fill: rgb(var(--onBody));
+}
+
+.fullContent {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    padding: 1rem;
+}
+
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/************* HEADER *************/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(var(--header));
+    color: rgb(var(--onHeader));
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    z-index: 2;
+}
+
+.header * {
+    z-index: 2;
+}
+
+.header .logo {
+    height: 3.6rem;
+    display: flex;
+    user-select: none;
+    align-items: center;
+    margin: 0 0.6rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header nav {
+    position: absolute;
+    top: calc(3.6rem - 100vh + 3.6rem);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 3.5rem);
+    background-color: rgb(var(--header));
+    opacity: 0.96;
+    transition-property: top;
+    transition-duration: 0.8s;
+    transition-behavior: ease-out;
+}
+
+.header a {
+    text-decoration: none;
+    color: rgb(var(--onHeaderPassive));
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 2.6rem;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .currentTab {
+    color: rgb(var(--onHeader));
+}
+
+@media only screen and (min-width: 450px) {
+    .header .smallIcon {
+        display: none;
+    }
+
+    .header nav {
+        position: unset;
+        width: min-content;
+        height: unset;
+        top: 3.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background-color: none;
+        opacity: 1;
+        transition: none;
+        margin-right: 0.4rem;
+    }
+}
+
+/************* BODY *************/
+
+#body {
+    position: absolute;
+    top: 3.6rem;
+    width: 100vw;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    height: calc(100vh - 3.6rem);
+}
+
+/************* HOME *************/
+
+#home {
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+}
+
+#home h1 {
+    color: rgb(var(--onBody));
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#home h3 {
+    color: rgb(var(--onBodyPassive));
+    font-weight: normal;
+    text-align: center;
+}
+
+/************* ABOUT *************/
+
+#about {
+    flex-direction: column;
+}
+
+#about h1 {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(var(--onBody));
+    text-align: center;
+}
+
+#about img {
+    margin: 1rem;
+    border-radius: 50%;
+    border: 0.2rem solid rgb(var(--onBody));
+    height: min(60vw, 360px);
+    width: min(60vw, 360px);
+    object-fit: cover;
+}
+
+#about p {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(var(--onBodyPassive));
+    padding: 0.4rem 0;
+    text-align: right;
+}
+
+#about p a {
+    color: rgb(var(--onBodyPassive));
+}
+
+@media only screen and (min-width: 760px) {
+    #about {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #about .leftPart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #about .rightPart {
+        width: min(520px, 50%);
+    }
+
+    #about .rightPart p {
+        font-size: 1.2rem;
+    }
+}
+
+/************* SKILLS *************/
+
+#skills {
+    flex-direction: column;
+}
+
+#skills h3 {
+    color: rgb(var(--onBody));
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#skills .languageIcons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0.4rem;
+}
+
+/************* CONTACT *************/
+
+#contact {
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact table tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: min(300px, 90vw);
+}
+
+#contact table tr td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+
+#contact .value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+}
+
+#contact h3, #contact a {
+    color: rgb(var(--onBody));
+    font-size: 1.4rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+#contact a {
+    font-size: 1.2rem;
+}
