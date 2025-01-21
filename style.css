@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+
 :root {
     --color1: 109, 163, 77;
     --color2: 86, 68, 93;
@@ -106,7 +108,7 @@ body {
     user-select: none;
     align-items: center;
     margin: 0 0.6rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Cutive Mono', 'Courier New', Courier, monospace;
 }
 
 .header nav {
