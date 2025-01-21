@@ -109,7 +109,7 @@ body {
     user-select: none;
     align-items: center;
     margin: 0 0.6rem;
-    font-family: 'Cutive Mono', 'Courier New', Courier, monospace;
+    
 }
 
 .header nav {
@@ -132,7 +132,6 @@ body {
 .header a {
     text-decoration: none;
     color: rgb(var(--onHeaderPassive));
-    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 1rem;
     height: 2.6rem;
@@ -181,7 +180,6 @@ body {
 /************* HOME *************/
 
 #home {
-    font-family: 'Courier New', Courier, monospace;
     flex-direction: column;
 }
 
@@ -206,7 +204,6 @@ body {
 
 #about h1 {
     font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
     color: rgb(var(--onBody));
     text-align: center;
 }
@@ -222,7 +219,6 @@ body {
 
 #about p {
     font-size: 1rem;
-    font-family: 'Courier New', Courier, monospace;
     color: rgb(var(--onBodyPassive));
     padding: 0.4rem 0;
     text-align: right;
@@ -262,7 +258,6 @@ body {
 
 #skills h3 {
     color: rgb(var(--onBody));
-    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     text-align: center;
     padding: 1rem 0;
@@ -313,7 +308,6 @@ body {
 #contact h3, #contact a {
     color: rgb(var(--onBody));
     font-size: 1.4rem;
-    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     text-align: center;
     padding: 1rem 0;
